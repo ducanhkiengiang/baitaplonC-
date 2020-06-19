@@ -26,41 +26,6 @@ struct NhanVien{
     void read(ifstream &);
     void write(ofstream &);
 };
-void timTheoTen(){
-    
-    fstream DSNV;
-    DSNV.open("DSNV.txt",ios::in);
-    string ten;
-    cout << "Nhap ten nhan vien can tim: ";
-    getline(cin, ten);
-    int i=0;
-    cout <<"KET QUA TIM KIEM NHAN VIEN CO TEN "<<ten<< " :"<<endl;
-    while (!DSNV.eof())
-    {
-        char temp[255];
-        DSNV.getline(temp, 255);
-        char *line = temp;
-        char *mnv,*ht,*ntns,*dc,*bpct;
-        mnv=strtok(line,",");
-        ht=strtok(NULL,",");
-        if(ht==ten){
-            cout<<endl;
-            cout<<"NHAN VIEN THU "<<i+1<<" :"<<endl;
-            cout<<"Ma nhan vien:"<<mnv<<endl;
-            cout<<"Ho ten:"<<ht<<endl;
-            ntns=strtok(NULL,",");
-            cout<<"Ngay thang nam sinh:"<<ntns<<endl;
-            dc=strtok(NULL,",");
-            cout<<"Dia chi:"<<dc<<endl;
-            bpct=strtok(NULL,",");
-            cout<<"Bo phan cong tac:"<<bpct<<endl;
-            i=i+1;
-            
-        }
-        
-    }
-    if(i==0){cout <<"Khong tim thay nhan vien" ;}
-}
 
 void tim(){
     // mo 2 file danh sach nhan vien va danh sach diem danh
@@ -473,19 +438,7 @@ void luaChon() {
         case 9: exit(0);
         }
     }
-    case 5:
-    {
-        fflush(stdin);
-        timTheoTen();
-        int a;
-        printf("\n\n 8-Tro ve");
-        printf("\n 9-Thoat ");
-        printf("\nChon chuc nang (8-9): ");
-        scanf("%d",&a);
-        switch(a){
-        case 8: luaChon();
-        case 9: exit(0);
-        }}
+  
     case 6:
     {
         fflush(stdin);
