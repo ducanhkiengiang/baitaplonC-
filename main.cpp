@@ -26,41 +26,6 @@ struct NhanVien{
     void read(ifstream &);
     void write(ofstream &);
 };
-void timTheoTen(){
-    
-    fstream DSNV;
-    DSNV.open("DSNV.txt",ios::in);
-    string ten;
-    cout << "Nhap ten nhan vien can tim: ";
-    getline(cin, ten);
-    int i=0;
-    cout <<"KET QUA TIM KIEM NHAN VIEN CO TEN "<<ten<< " :"<<endl;
-    while (!DSNV.eof())
-    {
-        char temp[255];
-        DSNV.getline(temp, 255);
-        char *line = temp;
-        char *mnv,*ht,*ntns,*dc,*bpct;
-        mnv=strtok(line,",");
-        ht=strtok(NULL,",");
-        if(ht==ten){
-            cout<<endl;
-            cout<<"NHAN VIEN THU "<<i+1<<" :"<<endl;
-            cout<<"Ma nhan vien:"<<mnv<<endl;
-            cout<<"Ho ten:"<<ht<<endl;
-            ntns=strtok(NULL,",");
-            cout<<"Ngay thang nam sinh:"<<ntns<<endl;
-            dc=strtok(NULL,",");
-            cout<<"Dia chi:"<<dc<<endl;
-            bpct=strtok(NULL,",");
-            cout<<"Bo phan cong tac:"<<bpct<<endl;
-            i=i+1;
-            
-        }
-        
-    }
-    if(i==0){cout <<"Khong tim thay nhan vien" ;}
-}
 
 void tim(){
     // mo 2 file danh sach nhan vien va danh sach diem danh
@@ -215,8 +180,7 @@ string month(char *date){
     return thang;
 }
 void xemTheoNhanVien(string thang){
-    std::ofstream xemNV;
-    xemNV.open ("xemNV.csv", ios::app);
+
     fstream DSNV;
     DSNV.open("DSNV.txt",ios::in);
     fstream DSDD;
@@ -236,7 +200,7 @@ void xemTheoNhanVien(string thang){
         if (mnv==ma){
             ht=strtok(NULL,",");
             cout<<"Ho ten:"<<ht<<endl;
-            xemNV<< ht;
+
         }
     }
     while (!DSDD.eof())
@@ -251,10 +215,10 @@ void xemTheoNhanVien(string thang){
         strcpy(date,ndd);
         if(month(date)==thang && mnv2==ma){
             cout<<ndd<<" : "<<ttdl<<endl;
-            xemNV <<","<<ndd<<","<<ttdl<<endl ;
+
         }
     }
-xemNV.close();
+
 }
 
 bool exist(vector<string> ds, string a){
@@ -314,24 +278,22 @@ void xemTheoBoPhan(string thang){
 
         }
     }
-    std::ofstream xemBoPhan;
-    xemBoPhan.open ("xemBoPhan.csv", ios::app);
+
     for (int i = 0; i < dsma.size(); i++){
         cout<<i+1<<". "<<dsten[i]<<endl;
-        xemBoPhan << dsten[i];
+
         if(exist(dsdd,dsma[i])){
             for (int j = 0; j < dsdd.size(); j++){
                 if (dsdd[j]== dsma[i]){
                     cout<<dsdd[j+1]<<" : "<<dsdd[j+2]<<endl;
-                    xemBoPhan <<","<<dsdd[j+1] <<","<<dsdd[j+2]<<endl ;
+
                 }}
 
         } else {
             cout<<"Khong co thong tin diem danh cua nhan vien nay"<<endl;
-            xemBoPhan<<","<<"Khong co thong tin"<<endl;}
-
+}
     }
-xemBoPhan.close();
+
 }
 void xemTatCa(string thang){
     vector<string> dsma;
@@ -376,26 +338,25 @@ void xemTatCa(string thang){
 
         }
     }
-std::ofstream xemTatCa;
-    xemTatCa.open ("xemTatCa.csv", ios::app);
+
     for (int i = 0; i < dsma.size(); i++){
         cout<<i+1<<". "<<dsten[i]<<endl;
-          xemTatCa << dsten[i];
+
         if(exist(dsdd,dsma[i])){
             for (int j = 0; j < dsdd.size(); j++){
                 if (dsdd[j]== dsma[i]){
                     cout<<dsdd[j+1]<<" : "<<dsdd[j+2]<<endl;
-                    xemTatCa <<","<<dsdd[j+1] <<","<<dsdd[j+2]<<endl ;
+
 
                 }
             }
 
         } else {
             cout<<"Khong co thong tin diem danh cua nhan vien nay"<<endl;
-            xemTatCa<<","<<"Khong co thong tin"<<endl;
+
         }
     }
-   xemTatCa.close();
+
 }
 void luaChon() {
     int t;
@@ -474,19 +435,7 @@ void luaChon() {
         case 9: exit(0);
         }
     }
-    case 5:
-    {
-        fflush(stdin);
-        timTheoTen();
-        int a;
-        printf("\n\n 8-Tro ve");
-        printf("\n 9-Thoat ");
-        printf("\nChon chuc nang (8-9): ");
-        scanf("%d",&a);
-        switch(a){
-        case 8: luaChon();
-        case 9: exit(0);
-        }}
+
     case 6:
     {
         fflush(stdin);
