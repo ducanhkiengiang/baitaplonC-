@@ -1,9 +1,48 @@
-01,2/3/2,dl
-02,2/3/2,dlnn
-03,2/3/2,np
-01,3/3/2,dl
-02,3/3/2,dlnn
-03,3/3/2,np
-01,4/3/2,dl
-02,4/3/2,dlnn
-03,4/3/2,np
+01,2/3/2,di lam
+02,2/3/2,di lam
+03,2/3/2,nghi phep
+04,2/3/2,di lam nua ngay
+05,2/3/2,di lam
+06,2/3/2,nghi phep
+01,3/3/2,nghi
+02,3/3/2,di lam nua ngay
+03,3/3/2,nghi phep
+04,3/3/2,di lam
+05,3/3/2,di lam nua ngay
+06,3/3/2,nghi phep
+01,4/3/2,di lam
+02,4/3/2,nghi phep
+03,4/3/2,nghi phep
+04,4/3/2,nghi
+05,4/3/2,di lam
+06,4/3/2,nghi phep
+01,5/3/2,di lam nua ngay
+02,5/3/2,di lam nua ngay
+03,5/3/2,nghi phep
+04,5/3/2,di lam
+05,5/3/2,di lam nua ngay
+06,5/3/2,nghi phep
+01,2/4/2,di lam
+02,2/4/2,di lam nua ngay
+03,2/4/2,nghi phep
+04,2/4/2,di lam
+05,2/4/2,di lam
+06,2/4/2,nghi
+01,3/4/2,di lam
+02,3/4/2,di lam nua ngay
+03,3/4/2,nghi phep
+04,3/4/2,di lam
+05,3/4/2,di lam
+06,3/4/2,nghi phep
+01,4/4/2,di lam
+02,4/4/2,di lam nua ngay
+03,4/4/2,nghi phep
+04,4/4/2,di lam
+05,4/4/2,di lam nua ngay
+06,4/4/2,nghi phep
+01,5/4/2,di lam
+02,5/4/2,di lam nua ngay
+03,5/4/2,nghi
+04,5/4/2,dlnn
+05,5/4/2,di lam nua ngay
+06,5/4/2,nghi phep
