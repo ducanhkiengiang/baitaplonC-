@@ -90,6 +90,7 @@ void diemDanh(DiemDanh &d){
     DSDD.open("DSDD.txt",ios::app );
     fflush(stdin);
     printf("\nNhap ma nhan vien: ");  gets(d.maNhanVien); fflush(stdin);
+    DSDD<<"\n";
     DSDD<<d.maNhanVien;
     fflush(stdin);
     printf("\nNhap ngay diem danh: ");  gets(d.ngayDiemDanh); fflush(stdin);
@@ -112,7 +113,7 @@ void diemDanh(DiemDanh &d){
     DSDD<<d.ngayDiemDanh;
     DSDD<<"," ;
     DSDD<<tt;
-    DSDD<<"\n";
+
     DSDD.close();
 }
 void nhap(NhanVien &nv ){
