@@ -215,7 +215,8 @@ string month(char *date){
     return thang;
 }
 void xemTheoNhanVien(string thang){
-
+    std::ofstream xemNV;
+    xemNV.open ("xemNV.csv", ios::app);
     fstream DSNV;
     DSNV.open("DSNV.txt",ios::in);
     fstream DSDD;
@@ -235,7 +236,7 @@ void xemTheoNhanVien(string thang){
         if (mnv==ma){
             ht=strtok(NULL,",");
             cout<<"Ho ten:"<<ht<<endl;
-
+            xemNV<< ht;
         }
     }
     while (!DSDD.eof())
@@ -250,10 +251,10 @@ void xemTheoNhanVien(string thang){
         strcpy(date,ndd);
         if(month(date)==thang && mnv2==ma){
             cout<<ndd<<" : "<<ttdl<<endl;
-
+            xemNV <<","<<ndd<<","<<ttdl<<endl ;
         }
     }
-
+xemNV.close();
 }
 
 bool exist(vector<string> ds, string a){
@@ -313,22 +314,24 @@ void xemTheoBoPhan(string thang){
 
         }
     }
-
+    std::ofstream xemBoPhan;
+    xemBoPhan.open ("xemBoPhan.csv", ios::app);
     for (int i = 0; i < dsma.size(); i++){
         cout<<i+1<<". "<<dsten[i]<<endl;
-
+        xemBoPhan << dsten[i];
         if(exist(dsdd,dsma[i])){
             for (int j = 0; j < dsdd.size(); j++){
                 if (dsdd[j]== dsma[i]){
                     cout<<dsdd[j+1]<<" : "<<dsdd[j+2]<<endl;
-
+                    xemBoPhan <<","<<dsdd[j+1] <<","<<dsdd[j+2]<<endl ;
                 }}
 
         } else {
             cout<<"Khong co thong tin diem danh cua nhan vien nay"<<endl;
+            xemBoPhan<<","<<"Khong co thong tin"<<endl;
 }
     }
-
+ xemBoPhan.close();
 }
 void xemTatCa(string thang){
     vector<string> dsma;
@@ -373,25 +376,25 @@ void xemTatCa(string thang){
 
         }
     }
-
+std::ofstream xemTatCa;
+    xemTatCa.open ("xemTatCa.csv", ios::app);
     for (int i = 0; i < dsma.size(); i++){
         cout<<i+1<<". "<<dsten[i]<<endl;
-
+        xemTatCa << dsten[i];
         if(exist(dsdd,dsma[i])){
             for (int j = 0; j < dsdd.size(); j++){
                 if (dsdd[j]== dsma[i]){
                     cout<<dsdd[j+1]<<" : "<<dsdd[j+2]<<endl;
-
-
-                }
+                    xemTatCa <<","<<dsdd[j+1] <<","<<dsdd[j+2]<<endl ;
+                  }
             }
 
         } else {
             cout<<"Khong co thong tin diem danh cua nhan vien nay"<<endl;
-
+            xemTatCa<<","<<"Khong co thong tin"<<endl;
         }
     }
-
+xemTatCa.close();
 }
 void luaChon() {
     int t;
