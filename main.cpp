@@ -152,21 +152,13 @@ void importCSV(){
         char *line = temp;
         char *mnv,*ht,*ntns,*dc,*bpct;
         mnv=strtok(line,",");
-        DSNV<<"\n";
-        DSNV<<mnv;
         ht=strtok(NULL,",");
-        DSNV<<"," ;
-        DSNV<<ht;
         ntns=strtok(NULL,",");
-        DSNV<<"," ;
-        DSNV<<ntns;
         dc=strtok(NULL,",");
-        DSNV<<"," ;
-        DSNV<<dc;
         bpct=strtok(NULL,",");
-        DSNV<<"," ;
-        DSNV<<bpct;
-        cout<<"Ma : "<<mnv<<" Ho ten: "<<ht<<" Ngay thang nam sinh: "<<ntns<<" Dia chi: "<<dc<<" Bo phan: "<<bpct<<endl;
+        if(bpct!=NULL){
+            DSNV<<"\n"<<mnv<<","<<ht<<","<<ntns<<","<<dc<<","<<bpct;
+        }
         a++;
     }
     DSNV.close();
