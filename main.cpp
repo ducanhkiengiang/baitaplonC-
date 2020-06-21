@@ -156,7 +156,7 @@ void importCSV(){
         ntns=strtok(NULL,",");
         dc=strtok(NULL,",");
         bpct=strtok(NULL,",");
-        if(bpct!=NULL){
+        if(bpct!=NULL && strcmp(mnv,"ID")!=0 ){
             DSNV<<"\n"<<mnv<<","<<ht<<","<<ntns<<","<<dc<<","<<bpct;
         }
         a++;
